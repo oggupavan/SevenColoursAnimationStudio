@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+    <link rel="icon" href="/assets/images/final_logo_1.png" type="image/png">
     <title>Expert Graphic Designing, Video Editing, and Digital Marketing Services | Seven Colours Animation Studio</title>
 
     <!-- Bootstrap core CSS -->
@@ -664,15 +664,41 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright © 2023 Seven Colour Animation Studio All Rights Reserved. 
-          <br>Design: <a href="https://CanopusDataweb.in" target="_parent" >Canopus Dataweb</a></p>
+          <p>Copyright © 2024 Seven Colour Animation Studio All Rights Reserved. 
+          <br>Design: <a href="https://CanopusDataweb.in" target="_parent" ></a></p>
         </div>
       </div>
     </div>
+
   </footer>
 
 
   <!-- Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("form-submit").addEventListener("click", function(e) {
+            e.preventDefault(); // Prevent form submission
+    
+            // Collect form data
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var subject = document.getElementById("subject").value;
+            var message = document.getElementById("message").value;
+    
+            // Construct the message
+            var fullMessage = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
+    
+            // Encode the message for a URL
+            var encodedMessage = encodeURIComponent(fullMessage);
+    
+            // Construct WhatsApp URL
+            var whatsappUrl = `https://wa.me/+919611490891?text=${encodedMessage}`;
+    
+            // Open WhatsApp URL to send the message
+            window.open(whatsappUrl, '_blank');
+        });
+    });
+    </script>
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/owl-carousel.js"></script>
