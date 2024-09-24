@@ -195,8 +195,10 @@ body {
 /* 
 ---------------------------------------------
 header
+
 --------------------------------------------- 
 */
+
 
 .pre-header {
   background-color: #efefef;
@@ -1389,17 +1391,16 @@ Free Quote
   background-color: #fff;
   display: inline-block;
   width: 100%;
-  min-height: 80px;
   border-radius: 40px;
   position: relative;
   z-index: 1;
+  padding: 30px 20px;
 }
 
-.free-quote form input {
-  width: 100%;
-  margin-top: 20px;
-  margin-left: 30px;
-  color: #afafaf;
+.free-quote form input, .free-quote form select {
+  width: calc(100% - 60px);
+  margin: 10px 30px;
+  color: #676565f2;
   font-weight: 400;
   font-size: 15px;
   height: 40px;
@@ -1413,17 +1414,28 @@ Free Quote
   outline: none;
 }
 
+.free-quote form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+
 .free-quote form button {
-  width: 100%;
-  height: 80px;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
+  width: calc(100% - 60px);
+  height: 50px;
+  border-radius: 25px;
   outline: none;
   border: none;
-  margin-left: 30px;
+  margin: 20px 30px;
   background-color: #4da6e7;
   font-size: 15px;
   color: #fff;
+  cursor: pointer;
+}
+
+.free-quote form button:hover {
+  background-color: #3985c1;
 }
 
 
@@ -2065,5 +2077,69 @@ responsive
   }
   form#contact {
     padding: 30px;
+  }
+}
+
+.logos-slider {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(90deg,rgba(0,0,0,0) 0,#000 15%,#000 85%,rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(90deg,rgba(0,0,0,0) 0,#000 15%,#000 85%,rgba(0,0,0,0) 100%);
+}
+
+.logos-slider-container {
+  padding-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  animation: slide 30s linear infinite;
+}
+
+.logos-slider-container img {
+width:150px;
+max-width: 150px;
+}
+
+@keyframes slide {
+0% {
+  transform: translate3d(0,0,0)
+}
+100% {
+  transform: translate3d(-100%,0,0)
+}
+}
+
+
+.cards {
+background: white;
+padding: 2rem;
+padding-top: 70px;
+border-radius: 1rem;
+max-width: 900px;
+margin: 0 auto;
+/* box-shadow: 0px 3px 8px rgb(61 74 84 / 10%), 0px 3px 12px rgb(61 74 84 / 6%) */
+}
+.experience {
+  position: absolute;
+  top: 10%;
+  left: 460px; 
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.29); /* Optional: To make the text stand out */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family:fantasy;
+  font-weight: 400;
+  color:gray;
+}
+@media (max-width: 767px) {
+  .experience {
+    top: auto;
+    bottom: 430px; /* Position it at the bottom */
+    left: 80%; /* Center horizontally */
+    transform: translateX(-50%);
+    font-size: 12px; /* Adjust font size for smaller screens */
   }
 }
